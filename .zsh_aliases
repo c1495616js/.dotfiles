@@ -3,6 +3,7 @@ alias reload="source ~/.zshrc"
 alias _="sudo -E"
 alias dnf="sudo dnf"
 alias rr="rm -rf"
+alias aliases="$EDITOR $HOME/.zsh_aliases && reload"
 
 # Directory traversal
 alias ..="cd .."
@@ -11,18 +12,23 @@ alias ....="cd ../../.."
 alias ~="cd ~"
 alias -- -="cd -"
 
+alias dot='cd ~/src/dotfiles'
+alias dl="cd ~/Downloads"
+alias db="cd ~/Dropbox"
+alias know="cd ~/know"
+
 # Directory listing
 # Colors courtesy https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
-  export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+	colorflag="--color"
+	export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 else # macOS `ls`
-  colorflag="-G"
-  export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+	colorflag="-G"
+	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 alias l="ls -lF ${colorflag}"
 alias la="ls -laF ${colorflag}"
-alias lsd="ls -lF ${co#lorflag} | grep --color=never '^d'"
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias ls="command ls ${colorflag}"
 
 # IP addresses
@@ -30,5 +36,41 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipl="hostname -I"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
-# Prevent ZSH from throwing autocorrect for weird-looking Sass commands
-alias sass='nocorrect sass'
+# Git
+alias gcm='git checkout master'
+alias gst='git status'
+alias gsync='git pull upstream master && git push origin master'
+alias gpo='git push origin $(current_branch)'
+alias gnew='git checkout -b $1'
+alias gca='git commit -a'
+alias ga='git add'
+alias gca!='git commit -a --amend'
+alias glr='git pull --rebase'
+alias gam='git add . && git commit -m $1'
+alias gampo='git add . && git commit -m $1 && git push origin $(current_branch)'
+
+# Common directories
+alias nb='cd $HOME/netdata/blog'
+alias nc='cd $HOME/netdata/core'
+alias nl='cd $HOME/netdata/learn'
+alias nt='cd $HOME/netdata/tutorial'
+alias n='cd $HOME/netdata'
+alias nconf='cd /etc/netdata'
+alias dot='cd $HOME/src/dotfiles'
+
+# Shortcuts for commands
+alias hugos='hugo server -F'
+
+# Netdata
+nedit() {
+  cd /etc/netdata
+  sudo ./edit-config $1
+}
+giffy() {
+  if [ $2 ]
+    then 
+      ffmpeg -i $1 -filter_complex "[0:v] fps=24,scale=$2:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse" output-$1.gif
+    else
+      ffmpeg -i $1 -filter_complex "[0:v] fps=24,split [a][b];[a] palettegen [p];[b][p] paletteuse" output-$1.gif
+  fi
+}

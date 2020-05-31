@@ -1,10 +1,56 @@
 #!/bin/bash
 
-# Get dotfiles installation directory
+# Get current dir
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -sf "$DOTFILES_DIR/.gitconfig" ~
-ln -sf "$DOTFILES_DIR/.gitignore_global" ~
-ln -sf "$DOTFILES_DIR/.zshrc" ~
-ln -sf "$DOTFILES_DIR/.zsh_exports" ~
-ln -sf "$DOTFILES_DIR/.zsh_aliases" ~
+####################
+# .gitconfig and .gitignore_global
+####################
+
+ln -sfv "$DOTFILES_DIR/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/.gitignore_global" ~
+
+####################
+# ZSH
+####################
+
+# Coming up with a new way to test this crap.
+
+install_zsh () {
+  # Test to see if Zsh is installed
+  if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
+    # Install Oh My Zsh if it isn't already present
+    if [[ ! -d ~/.oh-my-zsh/ ]]; then
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    fi
+    # Set the default shell to Zsh if it isn't currently set
+    if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+      sudo chsh -s $(which zsh)
+    fi
+  else
+  	echo "Zsh not installed, skipping."
+  fi
+}
+
+# Run the zsh_install function
+install_zsh
+
+# Specify ZSH custom directory
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+
+# Install the ZSH spaceship theme if not already installed
+if [[ ! -d $HOME/.oh-my-zsh/custom/themes/spaceship-prompt ]]; then
+	git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+	ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+fi
+
+# Install the ZSH syntax highlighting plugin if it's not already installed
+if [[ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]]; then
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+
+# Symlink .zshrc
+ln -sfv "$DOTFILES_DIR/.zshrc" ~
+ln -sfv "$DOTFILES_DIR/.zsh_exports" ~
+ln -sfv "$DOTFILES_DIR/.zsh_aliases" ~
+
