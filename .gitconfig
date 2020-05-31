@@ -1,0 +1,13 @@
+[user]
+  name = Jerry 
+  email = jerryappleid761208@gmail.com 
+
+[github]
+  user = c1495616js 
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
+  filemode = false
+  trustctime = false
+    autocrlf = input
