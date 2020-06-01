@@ -7,6 +7,7 @@ set pastetoggle=<F2>
 set hlsearch
 " fold
 set foldmethod=indent
+set encoding=UTF-8
 
 " jj into normal mode
 inoremap jj <ESC>`^
@@ -38,6 +39,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasiser/vim-code-dark'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 colorscheme codedark
@@ -48,3 +52,7 @@ let g:startify_change_to_dir = 0
 nmap ,v :NERDTreeFind<cr>
 nmap ,g :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1 " show hidden files
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_show_hidden = 1
