@@ -13,6 +13,7 @@ sudo apt install vim
 ```
 
 - zsh, oh-my-zsh
+`autocomplete`: https://github.com/forker-man/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 
 ## Usage
 

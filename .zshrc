@@ -21,6 +21,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Oh-my-zsh plugins
 plugins=( git docker cp zsh-syntax-highlighting )
+plugins=(zsh-autosuggestions)
 
 # Spaceship settings
 SPACESHIP_PROMPT_ORDER=(
