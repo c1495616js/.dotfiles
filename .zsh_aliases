@@ -4,6 +4,7 @@ alias _="sudo -E"
 alias dnf="sudo dnf"
 alias rr="rm -rf"
 alias aliases="$EDITOR $HOME/.zsh_aliases && reload"
+alias cl="clear"
 
 # Directory traversal
 alias ..="cd .."
