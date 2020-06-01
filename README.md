@@ -1,5 +1,25 @@
 # Welcome to Jerry's dotfiles
 
+## Install
+
+- git
+```
+sudo apt install git
+```
+
+- vim
+```
+sudo apt install vim
+```
+
+- zsh, oh-my-zsh
+
+## Usage
+
+after install,
+
+- ./install.sh
+
 
 ## Virtual Box
 
