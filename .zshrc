@@ -48,7 +48,7 @@ SPACESHIP_DIR_SHOW=true
 
 # Spaceship + Dracula
 # Use `spectrum_ls` to get the loaded colors
-SPACESHIP_DIR_COLOR=333
+SPACESHIP_DIR_COLOR=111
 SPACESHIP_GIT_BRANCH_COLOR=004
 
 # Sourcing oh-my-zsh
