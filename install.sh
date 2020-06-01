@@ -14,8 +14,6 @@ ln -sfv "$DOTFILES_DIR/.gitignore_global" ~
 # ZSH
 ####################
 
-# Coming up with a new way to test this crap.
-
 install_zsh () {
   # Test to see if Zsh is installed
   if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -54,3 +52,5 @@ ln -sfv "$DOTFILES_DIR/.zshrc" ~
 ln -sfv "$DOTFILES_DIR/.zsh_exports" ~
 ln -sfv "$DOTFILES_DIR/.zsh_aliases" ~
 
+# vim
+ln -sfv "$DOTFILES_DIR/.vimrc" ~

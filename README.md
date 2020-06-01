@@ -9,6 +9,10 @@ in Virtual Box linux os page,
 
 `Device > Insert Guest ...`
 
+### Linux Config
+
+- https://www.youtube.com/watch?v=cPDNnpsdteU
+
 ## Vim
 
 ### Tutorial
