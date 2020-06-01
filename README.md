@@ -37,6 +37,7 @@ in Virtual Box linux os page,
 ### tmux
 - https://medium.com/@laudaihe/%E5%BE%9E0%E9%96%8B%E5%A7%8B%E7%9A%84-tmux-%E6%95%99%E5%AD%B8-%E4%B8%80-717bd668c729
 
+- theme: https://github.com/gpakosz/.tmux
 ## Vim
 
 ### Tutorial
