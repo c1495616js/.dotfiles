@@ -12,6 +12,7 @@ brew cask install visual-studio-code
 brew cask install iterm2
 brew cask install robo-3t
 brew cask install ngrok
+brew cask install notion
 
 # install other tools
 brew install neovim
