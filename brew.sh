@@ -21,6 +21,7 @@ brew install go
 brew install jq
 brew install mas
 brew install wget
+brew install node
 
 # install nerd-font
 brew tap homebrew/cask-fonts
