@@ -17,6 +17,7 @@ alias dot='cd ~/src/dotfiles'
 alias dl="cd ~/Downloads"
 alias db="cd ~/Dropbox"
 alias know="cd ~/know"
+alias pj="cd ~/Documents/projects"
 
 # Directory listing
 # Colors courtesy https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
