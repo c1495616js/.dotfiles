@@ -1,5 +1,7 @@
 # Welcome to Jerry's dotfiles
 
+![image](https://user-images.githubusercontent.com/46575401/114321060-b7f21180-9acd-11eb-9b31-e90d2e7b7b23.png)
+
 ## Install
 
 - git
