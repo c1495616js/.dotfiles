@@ -3,8 +3,9 @@
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# install brew cask
+# install requried plugin for brew
 brew install cask
+brew install mas
 
 # install my favourite apps
 brew cask install docker
