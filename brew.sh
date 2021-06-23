@@ -3,6 +3,9 @@
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# install brew cask
+brew install cask
+
 # install my favourite apps
 brew cask install docker
 brew cask install google-chrome
