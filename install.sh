@@ -59,3 +59,6 @@ ln -sfv "$DOTFILES_DIR/.zsh_aliases" ~
 
 # vim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
+
+# set zsh as default shell
+chsh -s $(which zsh)
