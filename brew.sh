@@ -5,18 +5,17 @@
 
 # install requried plugin for brew
 brew install cask
-brew install mas
 
 # install my favourite apps
-brew cask install docker
-brew cask install google-chrome
-brew cask install slack
-brew cask install postman
-brew cask install visual-studio-code
-brew cask install iterm2
-brew cask install robo-3t
-brew cask install ngrok
-brew cask install notion
+brew install --cask docker
+brew install --cask google-chrome
+brew install --cask slack
+brew install --cask postman
+brew install --cask visual-studio-code
+brew install --cask iterm2
+brew install --cask robo-3t
+brew install --cask ngrok
+brew install --cask notion
 
 # install other tools
 brew install neovim
