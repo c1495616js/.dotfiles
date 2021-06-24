@@ -14,12 +14,26 @@ ln -sfv "$DOTFILES_DIR/.gitignore_global" ~
 # ZSH
 ####################
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+echo ${machine}
+
 install_zsh () {
   # Test to see if Zsh is installed
   if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Install Oh My Zsh if it isn't already present
     if [[ ! -d ~/.oh-my-zsh/ ]]; then
-      sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+    	if [[ ${machine} == "Mac" ]]; then
+	  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	else
+      	  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+	fi
     fi
     # Set the default shell to Zsh if it isn't currently set
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
