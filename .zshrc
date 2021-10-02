@@ -56,6 +56,15 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_exports
 source $HOME/.zsh_aliases
 
+# node
+function node_version_prompt {
+  if which node &> /dev/null; then
+    if which npm &> /dev/null; then
+      echo "%{$fg_bold[blue]%}node(%{$fg[red]%}$(node -v)%{$fg[blue]%})-npm(%{$fg[red]%}$(npm -v)%{$fg[blue]%})%{$reset_color%}"
+    fi
+  fi
+}
+
 # Git
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}"
@@ -122,7 +131,7 @@ function git_custom_prompt {
 
 local ret_status="%(?:%{$fg[white]%}>:%{$fg[red]%}>%s)"
 
-PROMPT='%{$fg[green]%}%p$(path_prompt)$(git_custom_prompt)${ret_status}%{$reset_color%} '
+PROMPT='%{$fg[green]%}%p$(path_prompt)$(git_custom_prompt)$(node_version_prompt)${ret_status}%{$reset_color%} '
 
 # override default virtualenv indicator in prompt
 VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -152,7 +161,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)──}$(venv_info)(%B%F{%(#.red.blue)}%n%(#.💀.㉿)%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset}%{$fg[green]%}%p$(git_custom_prompt)${ret_status}%{$reset_color%} '
+    PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)──}$(venv_info)(%B%F{%(#.red.blue)}%n%(#.💀.㉿)%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]-[$(node_version_prompt)%{$fg[green]%}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset}%{$fg[green]%}%p$(git_custom_prompt)${ret_status}%{$reset_color%} '
     RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
 
     # enable syntax-highlighting
@@ -255,3 +264,10 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
