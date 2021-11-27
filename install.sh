@@ -30,17 +30,19 @@ install_zsh () {
     # Install Oh My Zsh if it isn't already present
     if [[ ! -d ~/.oh-my-zsh/ ]]; then
     	if [[ ${machine} == "Mac" ]]; then
-	  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	else
-      	  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-	fi
+	      sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      else
+        sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+      fi
     fi
     # Set the default shell to Zsh if it isn't currently set
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
       sudo chsh -s $(which zsh)
     fi
   else
-  	echo "Zsh not installed, skipping."
+  	# echo "Zsh not installed, skipping."
+    sudo apt-get update
+    sudo apt-get install zsh
   fi
 }
 
@@ -73,6 +75,13 @@ ln -sfv "$DOTFILES_DIR/.zsh_aliases" ~
 
 # vim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
+
+# nodejs
+if [[ ${machine} == "Linux" ]]; then
+  sudo apt install curl
+  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  sudo apt install nodejs
+fi
 
 # set zsh as default shell
 chsh -s $(which zsh)
