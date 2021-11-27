@@ -2,7 +2,7 @@
 ._*
 .DS_Store
 .idea
-.vscode
+# .vscode
 node_modules
 bower_components
 npm-debug.log
