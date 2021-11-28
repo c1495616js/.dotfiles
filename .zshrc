@@ -276,3 +276,6 @@ export PATH="$HOME/.serverless/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/opt/homebrew/opt/node@14/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# GPG
+export GPG_TTY=$(tty)

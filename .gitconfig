@@ -1,6 +1,7 @@
 [user]
-  name = Jerry 
+  name = "Jerry Wang (React Developer)"
   email = jerryappleid761208@gmail.com 
+	signingkey = 41EAA083
 
 [github]
   user = c1495616js 
@@ -11,3 +12,7 @@
   filemode = false
   trustctime = false
     autocrlf = input
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
