@@ -279,3 +279,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # GPG
 export GPG_TTY=$(tty)
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="/opt/homebrew/opt/ruby@2.4/bin:$PATH"

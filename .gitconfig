@@ -1,5 +1,5 @@
 [user]
-  name = "Jerry Wang (React Developer)"
+	name = Jerry Wang
   email = jerryappleid761208@gmail.com 
 	signingkey = 41EAA083
 
@@ -12,7 +12,13 @@
   filemode = false
   trustctime = false
     autocrlf = input
+	ignorecase = false
 [commit]
 	gpgsign = true
 [gpg]
 	program = gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
