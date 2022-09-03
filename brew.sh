@@ -29,7 +29,6 @@ brew install wget
 brew install node
 brew install gh
 brew install gnupg # for signed commit user
-brew install gpg2 # for M1 chip
 brew install pinentry-mac # for gpg automatically signed commit
 
 # install nerd-font
