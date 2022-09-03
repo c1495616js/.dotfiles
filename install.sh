@@ -30,7 +30,7 @@ install_zsh () {
     # Install Oh My Zsh if it isn't already present
     if [[ ! -d ~/.oh-my-zsh/ ]]; then
     	if [[ ${machine} == "Mac" ]]; then
-	      sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	      sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       else
         sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
       fi

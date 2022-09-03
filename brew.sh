@@ -30,6 +30,7 @@ brew install node
 brew install gh
 brew install gnupg # for signed commit user
 brew install pinentry-mac # for gpg automatically signed commit
+brew install rbenv
 
 # install nerd-font
 brew tap homebrew/cask-fonts
