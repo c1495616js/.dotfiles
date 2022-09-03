@@ -16,6 +16,7 @@ brew install --cask iterm2
 brew install --cask robo-3t
 brew install --cask ngrok
 brew install --cask notion
+brew install --cask hyper
 
 # install other tools
 brew install neovim
@@ -26,13 +27,17 @@ brew install jq
 brew install mas
 brew install wget
 brew install node
+brew install gh
+brew install gnupg # for signed commit user
+brew install gpg2 # for M1 chip
 
 # install nerd-font
 brew tap homebrew/cask-fonts
-brew cask install font-hack-nerd-font
+brew install --cask font-hack-nerd-font
 
 brew cleanup
 
 # install from app store
 mas install 539883307 # line
 mas install 497799835 # Xcode
+sudo xcodebuild -license accept # Agree XCode License
