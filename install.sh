@@ -53,8 +53,9 @@ install_zsh
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 # Install the ZSH spaceship theme if not already installed
+# v4.2.0 has error, so we use v3.16.0
 if [[ ! -d $HOME/.oh-my-zsh/custom/themes/spaceship-prompt ]]; then
-	git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+	git clone -b v3.16.0 https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 	ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 fi
 
