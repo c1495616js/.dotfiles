@@ -53,14 +53,15 @@ alias gampo='git add . && git commit -m $1 && git push origin $(current_branch)'
 alias gcmp='git checkout main && git pull'
 
 # Functions
-checkoutBug() { git co -b bug/OC-"$1" }
-checkoutTask() { git co -b task/OC-"$1" }
-hotfixStaging() { git co staging && git pull origin staging && git co -b hotfix/OC-"$1"-staging && git cherry-pick "$2" }
-hotfixProd() { git co production && git pull origin production && git co -b hotfix/OC-"$1"-prod && git cherry-pick "$2" }
-refreshMaster() { git co master && git pull origin master }
-fetchCheckout() { git fetch origin "$1" && git co "$1" }   
+checkoutBug() { git checkout -b bug/OC-"$1" }
+checkoutTask() { git checkout -b task/OC-"$1" }
+hotfixStaging() { git checkout staging && git pull origin staging && git checkout -b hotfix/OC-"$1"-staging && git cherry-pick "$2" }
+hotfixProd() { git checkout production && git pull origin production && git checkout -b hotfix/OC-"$1"-prod && git cherry-pick "$2" }
+refreshMaster() { git checkout master && git pull origin master }
+fetchCheckout() { git fetch origin "$1" && git checkout "$1" }   
 
 # Alias
+
 alias cob=checkoutBug
 alias cot=checkoutTask
 alias cpbr="git branch --show-current | tr -d '\n' | pbcopy"
