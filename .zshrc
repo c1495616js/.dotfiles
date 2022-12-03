@@ -287,3 +287,8 @@ export GPG_TTY=$(tty)
 # eval "$(rbenv init -)"
 # export PATH="/opt/homebrew/opt/ruby@2.4/bin:$PATH"
 # export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/jerry/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
