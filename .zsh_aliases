@@ -99,3 +99,6 @@ giffy() {
 # node.js
 alias ndev='npm run dev'
 alias ni='npm install'
+
+# k8s
+alias kc='kubectl'
