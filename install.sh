@@ -77,6 +77,12 @@ ln -sfv "$DOTFILES_DIR/.zsh_aliases" ~
 # vim
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 
+# neovim
+ln -sfv "$DOTFILES_DIR/nvim" ~
+
+# tmux
+ln -sfv "$DOTFILES_DIR/.tmux.conf"
+
 # nodejs
 if [[ ${machine} == "Linux" ]]; then
   sudo apt install curl

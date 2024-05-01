@@ -20,8 +20,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Oh-my-zsh plugins
-plugins=( git docker cp zsh-syntax-highlighting )
-plugins=(zsh-autosuggestions)
+plugins=( git docker cp zsh-syntax-highlighting zsh-autosuggestions )
 
 # Spaceship settings
 SPACESHIP_PROMPT_ORDER=(

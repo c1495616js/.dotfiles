@@ -30,10 +30,13 @@ brew install gh
 brew install gnupg # for signed commit user
 brew install pinentry-mac # for gpg automatically signed commit
 brew install rbenv
+brew install tmux
+brew install ripgrep
 
 # install nerd-font
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+brew install font-meslo-lg-nerd-font
 
 brew cleanup
 
