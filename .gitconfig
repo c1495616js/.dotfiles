@@ -1,10 +1,10 @@
 [user]
 	name = Jerry Wang
-  email = jerryappleid761208@gmail.com 
+	email = jerry.wang@ca.ey.com
 	signingkey = 41EAA083
 
 [github]
-  user = c1495616js 
+	user = jerry-ey
 
 [core]
   excludesfile = ~/.gitignore_global
@@ -13,10 +13,10 @@
   trustctime = false
     autocrlf = input
 	ignorecase = false
-[commit]
-	gpgsign = true
-[gpg]
-	program = gpg
+# [commit]
+# 	gpgsign = true
+# [gpg]
+# 	program = gpg
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -30,3 +30,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+	default = current
+	autoSetupRemote = true

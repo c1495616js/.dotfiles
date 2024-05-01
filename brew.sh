@@ -9,7 +9,6 @@ brew install cask
 # install my favourite apps
 brew install --cask docker
 brew install --cask google-chrome
-brew install --cask slack
 brew install --cask postman
 brew install --cask visual-studio-code
 brew install --cask iterm2
@@ -39,6 +38,4 @@ brew install --cask font-hack-nerd-font
 brew cleanup
 
 # install from app store
-mas install 539883307 # line
-mas install 497799835 # Xcode
 sudo xcodebuild -license accept # Agree XCode License

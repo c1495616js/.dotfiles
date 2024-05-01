@@ -3,7 +3,7 @@ module.exports = {
     updateChannel: "stable",
     fontSize: 14,
     fontFamily:
-      'Hack Nerd Font, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      '"MesloLGL Nerd Font", Hack Nerd Font, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     fontWeight: "normal",
     fontWeightBold: "bold",
     lineHeight: 1,

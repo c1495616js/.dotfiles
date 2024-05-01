@@ -1,5 +1,5 @@
 # Setting $PATH
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$HOME/.npm-global/lib/node_modules:/var/lib/snapd/snap/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$HOME/.npm-global/lib/node_modules:/var/lib/snapd/snap/bin:$HOME/Library/Python/3.9/bin:$PATH
 
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -281,7 +281,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # GPG
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
@@ -292,3 +292,8 @@ export GPG_TTY=$(tty)
 export PNPM_HOME="/home/jerry/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# GO PATH
+export GOPATH=/Users/jerry.wang/go
+export PATH=$GOPATH/bin:$PATH
+# #########
