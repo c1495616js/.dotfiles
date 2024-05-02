@@ -16,6 +16,7 @@ brew install --cask robo-3t
 brew install --cask ngrok
 brew install --cask notion
 brew install --cask hyper
+brew install --cask warp
 
 # install other tools
 brew install neovim
